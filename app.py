@@ -5,5 +5,16 @@ from flask import Flask
 # 다른 파일에서 import 하면 실행되지 않아요.
 app = Flask(__name__)
 
+stores = [
+    {
+        "name": "Chair",
+        "price": 15.99
+    }
+]
+
+@app.get("/")
+def get_stores():
+    return {"stores": stores}
+
 if __name__ == "__main__":
     app.run()
