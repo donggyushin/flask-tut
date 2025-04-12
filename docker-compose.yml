@@ -1,0 +1,10 @@
+services:
+  web:
+    # Target Dockerfile in current directory
+    build: .
+    ports:
+      # <Local port>:<Container port>
+      - 5005:5000
+    volumes:
+        # Copy everything in current directory into /app directory in Docker Container
+      - .:/app
