@@ -8,7 +8,7 @@ from schemas import TagSchema, TagAndItemSchema
 
 blp = Blueprint("Tags", "tags", description="Operations on tags")
 
-@blp.route("/item<string:item_id>/tag/<string:tag_id>")
+@blp.route("/item/<string:item_id>/tag/<string:tag_id>")
 class LinkTagToItem(MethodView):
     @blp.response(200, TagAndItemSchema)
     def post(self, item_id, tag_id):
